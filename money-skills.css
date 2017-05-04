@@ -2,10 +2,6 @@
   opacity: 1;
 }
 
-html {
-  font-family: proxima-nova, sans-serif;
-}
-
 .video-background {
   z-index: 1;
   width: 100%;
@@ -150,6 +146,7 @@ html {
 body,
 html {
   max-height: 100%;
+  font-family: proxima-nova, sans-serif;
 }
 
 .input-text {
