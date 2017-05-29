@@ -29,6 +29,19 @@ body {
   padding: 30px;
 }
 
+footer {
+  color: #ffffff;
+  text-align: center;
+}
+
+.footer-text {
+  font-size: 14px;
+  padding: 20px;
+  font-weight: lighter;
+  margin-bottom: 0;
+  color: #fff;
+}
+
 @media only screen and (max-width: 992px) {
   .video-background-mobile {
     background-image: url('images/header.jpg');
