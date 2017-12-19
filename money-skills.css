@@ -287,3 +287,62 @@ input:focus + label {
     padding: 0;
   }
 }
+
+.subscribe-email-container {
+  border-radius: 0;
+  padding: 20px !important;
+  max-width: 340px !important;
+  background-color: #fff;
+}
+.subscribe-mailtrain-button {
+  color: #fff;
+  border-radius: 2px;
+  border: 0;
+  cursor: pointer;
+  display: inline-block;
+  padding: 10px 16px 10px 16px;
+  background: #3cba54;
+  font-size: 18px;
+}
+.subscribe-mailtrain-button:focus {
+  outline: none;
+}
+
+.subscribe-mailtrain-input-info {
+  color: #f44336;
+  margin-top: 10px;
+}
+
+.mailtrain-input-box {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+}
+
+.hide {
+  display: none;
+}
+
+label {
+  font-size: 16px;
+  color: #333;
+  font-weight: 500;
+}
+
+input {
+  text-decoration: none;
+  height: 35px;
+  margin-bottom: 20px;
+}
+
+.blog-subscribe-success-message {
+  color: #00a651;
+  margin-top: 10px;
+}
+}
+
+@media only screen and (max-width: 767px) {
+  .subscribe-email-container {
+    width: 300px !important;
+  }
+}
