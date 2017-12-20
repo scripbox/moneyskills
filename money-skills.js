@@ -52,10 +52,6 @@ document.addEventListener("webkitfullscreenchange", function() {
 
 $(document).ready(function(){
   $('.subscribe-mailtrain-button').click(function(e){
-    if (isValidNumber($('.subscribe-mailtrain-mobile-input').val()) == false) {
-      $('.subscribe-mailtrain-input-info').html("Enter valid number");
-      return;
-    }
     subscribeEmailtoMailTrain();
   });
 });
@@ -122,11 +118,4 @@ function isValidEmail(email){
     return true;
   }
   return false;
-}
-
-function isValidNumber(number) {
-  var filter = /^[0-9]{10}$/;
-  if(filter.test(number)) {
-    return true;
-  }
 }
