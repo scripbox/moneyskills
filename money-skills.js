@@ -52,20 +52,11 @@ document.addEventListener("webkitfullscreenchange", function() {
 
 $(document).ready(function(){
   $('.subscribe-mailtrain-button').click(function(e){
+    if (isValidNumber($('.subscribe-mailtrain-mobile-input').val()) == false) {
+      $('.subscribe-mailtrain-input-info').html("Enter valid number");
+      return;
+    }
     subscribeEmailtoMailTrain();
-  });
-  $('input[type="number"]').keydown(function(e) {
-    var key = e.charCode || e.keyCode || 0;
-    // allow backspace, tab, delete, enter, arrows, numbers and keypad numbers ONLY
-    // home, end, period, and numpad decimal
-    return (
-      (key >= 48 && key <= 57));
-  });
-  $('.subscribe-mailtrain-mobile-input').keydown(function(e){
-    if isValidNumber($('.subscribe-mailtrain-mobile-input').val())
-      return true;
-    else
-      $('.subscribe-mailtrain-input-info').html('invalid number');
   });
 });
 
@@ -78,9 +69,11 @@ function subscribeEmailtoMailTrain(){
   subscriber_data.organisation=$('.subscribe-mailtrain-company-input').val();
   subscriber_data.designation=$('.subscribe-mailtrain-designation-input').val();
 
-  if ((!subscriber_data.email== '') && (!subscriber_data.name== '')) {
+  if ((!subscriber_data.email== '') && (!subscriber_data.name== '') && (!subscriber_data.mobile== '')
+    && (!subscriber_data.organisation== '') && (!subscriber_data.designation== '')) {
     if(isValidEmail(subscriber_data.email)) {
       $('.loading').show();
+      $('.subscribe-mailtrain-input-info').hide();
       $.post("http://localhost:3000/moneyskills_subscribe", subscriber_data)
         .done(function(response) {
           $('.loading').hide();
@@ -88,6 +81,7 @@ function subscribeEmailtoMailTrain(){
           if(response.success) {
             $('.mailtrain-just-subscribed').show();
             $('.subscribe-mailtrain-input-info').hide();
+            $('.mailtrain-box').hide();
           }
           else {
             if (response.message) {
@@ -117,6 +111,9 @@ function subscribeEmailtoMailTrain(){
       $('.mailtrain-just-subscribed').hide();
     }
   }
+  else {
+    $('.subscribe-mailtrain-input-info').html('Please enter all details');
+  }
 }
 
 function isValidEmail(email){
@@ -127,10 +124,9 @@ function isValidEmail(email){
   return false;
 }
 
-function isValidNumber(mobile) {
-  var filter = /([^\d])\d{10}([^\d])/
-  if(filter.test(mobile)) {
+function isValidNumber(number) {
+  var filter = /^[0-9]{10}$/;
+  if(filter.test(number)) {
     return true;
   }
-  return false;
 }

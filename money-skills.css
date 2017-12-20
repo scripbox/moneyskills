@@ -148,7 +148,7 @@ footer {
 .details-form {
   box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.2), 0 6px 30px 0 rgba(0, 0, 0, 0.19);
   background-color: #fff;
-  max-height: 900px;
+  height: 800px;
   max-width: 700px;
   border-radius: 10px;
   margin-left: auto;
@@ -168,7 +168,7 @@ footer {
 }
 
 .submitted {
-  margin-top: 200px;
+  margin-top: 100px;
   margin-bottom: 50px;
 }
 
@@ -257,7 +257,7 @@ input:focus + label {
 
   .details-form {
     max-width: 100%;
-    max-height: 900px;
+    height: 800px;
     margin-left: 0;
     margin-right: 0;
     padding: 0;
@@ -311,6 +311,7 @@ input:focus + label {
 .subscribe-mailtrain-input-info {
   color: #f44336;
   margin-top: 10px;
+  text-align: center;
 }
 
 .mailtrain-input-box {
